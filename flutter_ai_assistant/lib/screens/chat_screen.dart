@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/assistant_provider.dart';
-import '../widgets/chat_message_widget.dart';
+import '../widgets/chat_bubble.dart';
 import '../widgets/input_area.dart';
 import '../widgets/status_indicator.dart';
 import '../widgets/performance_overlay.dart';
@@ -196,7 +196,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
               }
             });
             
-            return ChatMessageWidget(
+            return ChatBubble(
               message: message,
               onSpeak: provider.speak,
             );
@@ -416,4 +416,32 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
             )
           : const Text('Model information not available'),
         actions: [
-          TextButton(
+          TextButton(            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoRow(String title, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 100,
+            child: Text(
+              '$title:',
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(
+            child: Text(value),
+          ),
+        ],
+      ),
+    );
+  }
+}
