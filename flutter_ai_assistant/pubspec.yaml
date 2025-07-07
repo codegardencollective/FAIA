@@ -1,0 +1,102 @@
+name: flutter_ai_assistant
+description: A cross-platform AI assistant built with Flutter and TensorFlow Lite
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Core dependencies
+  provider: ^6.1.2
+  tflite_flutter: ^0.9.0
+  tflite_flutter_helper: ^0.3.1
+  
+  # UI and animations
+  cupertino_icons: ^1.0.6
+  flutter_animate: ^4.5.0
+  lottie: ^3.1.0
+  
+  # Audio processing
+  speech_to_text: ^6.6.0
+  flutter_tts: ^4.0.2
+  permission_handler: ^11.3.1
+  
+  # Utilities
+  path: ^1.9.0
+  path_provider: ^2.1.3
+  shared_preferences: ^2.2.3
+  
+  # HTTP and networking
+  http: ^1.2.1
+  dio: ^5.4.3
+  
+  # State management and architecture
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+  
+  # Logging and debugging
+  logger: ^2.3.0
+  
+  # Platform-specific
+  device_info_plus: ^10.1.0
+  battery_plus: ^6.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Code quality
+  flutter_lints: ^4.0.0
+  very_good_analysis: ^5.1.0
+  
+  # Testing
+  mockito: ^5.4.4
+  integration_test:
+    sdk: flutter
+  
+  # Build tools
+  build_runner: ^2.4.9
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/models/
+    - assets/images/
+    - assets/animations/
+    - assets/audio/
+  
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+
+flutter_intl:
+  enabled: true
+  
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+  min_sdk_android: 21
+  
+platforms:
+  android:
+    package: com.codegarden.flutter_ai_assistant
+  ios:
+    bundle_identifier: com.codegarden.flutter_ai_assistant
+  web:
+    short_name: AI Assistant
+  windows:
+    app_id: com.codegarden.flutter_ai_assistant
+  macos:
+    bundle_identifier: com.codegarden.flutter_ai_assistant
+  linux:
+    app_id: com.codegarden.flutter_ai_assistant
