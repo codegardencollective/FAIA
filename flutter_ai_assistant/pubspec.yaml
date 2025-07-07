@@ -44,6 +44,7 @@ dependencies:
   # Platform-specific
   device_info_plus: ^10.1.0
   battery_plus: ^6.0.2
+  tflite_flutter: ^0.11.0
 
 dev_dependencies:
   flutter_test:
