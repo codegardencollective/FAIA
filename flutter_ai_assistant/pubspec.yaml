@@ -12,8 +12,8 @@ dependencies:
   
   # Core dependencies
   provider: ^6.1.2
-  tflite_flutter: ^0.9.0
-  tflite_flutter_helper: ^0.3.1
+  # tflite_flutter: ^0.9.0
+  # tflite_flutter_helper: ^0.3.1
   
   # UI and animations
   cupertino_icons: ^1.0.6
